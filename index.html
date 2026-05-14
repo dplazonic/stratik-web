@@ -14,6 +14,21 @@
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#163728" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("stratik-theme");
+          const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.dataset.theme = "dark";
+          }
+        } catch {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.dataset.theme = "dark";
+          }
+        }
+      })();
+    </script>
     <link rel="canonical" href="https://gir.hr/" />
     <link rel="alternate" hreflang="hr-HR" href="https://gir.hr/" />
 
@@ -84,7 +99,14 @@
         <a href="#contact">Kontakt</a>
       </nav>
 
-      <button class="header-action" type="button" data-open-inquiry>Pošaljite upit</button>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" aria-label="Uključi tamni način" aria-pressed="false" data-theme-toggle>
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+        </button>
+        <button class="header-action" type="button" data-open-inquiry>Pošaljite upit</button>
+      </div>
     </header>
 
     <main id="top">
