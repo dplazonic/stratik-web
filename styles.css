@@ -421,6 +421,13 @@ h1 {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.service-tile:hover {
+  border-color: rgba(185, 155, 92, 0.58);
+  box-shadow: 0 18px 38px rgba(22, 55, 40, 0.09);
+  transform: translateY(-3px);
 }
 
 .service-number {
