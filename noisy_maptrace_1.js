@@ -47,10 +47,6 @@ let sketch = function(p) {
     if (tick > 220) p.noLoop();
   };
 
-  p.keyPressed = function() {
-    if (p.keyCode === 80) p.saveCanvas('sketch_' + THE_SEED, 'jpeg');
-  };
-
   class Particle {
     constructor(x, y, phi) {
       this.pos = p.createVector(x, y);
