@@ -440,8 +440,33 @@ h1 {
 }
 
 .service-tile p {
-  margin-bottom: 0;
+  margin-bottom: 20px;
   color: var(--muted);
+}
+
+.service-tile ul {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.service-tile li {
+  position: relative;
+  padding-left: 17px;
+  color: #394841;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.service-tile li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--sand-650);
+  border-radius: 999px;
+  content: "";
 }
 
 .process {
