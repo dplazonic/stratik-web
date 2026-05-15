@@ -409,7 +409,7 @@ h1 {
 }
 
 .button.primary:hover {
-  background: var(--primary-hover-bg);
+  background: #c8ad72;
   border-color: var(--primary-hover-bg);
 }
 
