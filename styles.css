@@ -213,8 +213,8 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   color: var(--heading-color);
   background: var(--surface-soft-bg);
