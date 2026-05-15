@@ -870,6 +870,12 @@ h1 {
   text-transform: uppercase;
 }
 
+.contact-link span:hover {
+  color: var(--heading-color);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
