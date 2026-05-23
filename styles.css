@@ -338,6 +338,7 @@ main {
   position: relative;
   z-index: 2;
   width: 100%;
+  transform: translateX(clamp(12px, 1.2vw, 26px));
 }
 
 .eyebrow {
@@ -1048,6 +1049,10 @@ body.modal-open {
 
   .hero-layout {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    transform: none;
   }
 
   .hero-visual {
