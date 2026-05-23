@@ -442,9 +442,10 @@ h1 {
   z-index: 1;
   display: grid;
   align-items: center;
+  justify-items: end;
   min-height: clamp(410px, 46vw, 720px);
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-sketch-panel {
@@ -457,7 +458,7 @@ h1 {
   border: 0;
   box-shadow: none;
   opacity: 0.92;
-  transform: translateX(2%);
+  transform: translateX(6%);
 }
 
 .hero-sketch-frame {
@@ -483,6 +484,13 @@ h1 {
   outline: 0 !important;
   filter: var(--terrain-filter);
   mix-blend-mode: var(--terrain-blend);
+}
+
+@media (min-width: 1440px) {
+  .hero-sketch-panel {
+    width: min(118%, 1160px);
+    transform: translateX(clamp(72px, 8vw, 180px));
+  }
 }
 
 .intro {
