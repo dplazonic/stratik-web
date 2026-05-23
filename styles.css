@@ -357,13 +357,15 @@ main {
 }
 
 h1 {
-  max-width: 760px;
+  max-width: 850px;
   margin-bottom: 28px;
   color: var(--heading-color);
-  font-size: 4.7rem;
-  font-weight: 600;
-  line-height: 1.02;
+  font-size: 4.45rem;
+  font-weight: 800;
+  line-height: 0.96;
   letter-spacing: 0;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .hero-lead {
@@ -1005,8 +1007,8 @@ body.modal-open {
 
 @media (max-width: 1180px) {
   h1 {
-    max-width: 660px;
-    font-size: 3.85rem;
+    max-width: 700px;
+    font-size: 3.65rem;
   }
 
   .section-heading h2,
@@ -1100,8 +1102,8 @@ body.modal-open {
   }
 
   h1 {
-    font-size: 2.82rem;
-    line-height: 1.04;
+    font-size: 2.35rem;
+    line-height: 1.02;
   }
 
   .hero-lead {
