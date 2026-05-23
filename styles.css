@@ -458,7 +458,7 @@ h1 {
   border: 0;
   box-shadow: none;
   opacity: 0.92;
-  transform: translateX(4%);
+  transform: translateX(3%);
 }
 
 .hero-sketch-frame {
@@ -489,7 +489,7 @@ h1 {
 @media (min-width: 1440px) {
   .hero-sketch-panel {
     width: min(112%, 1080px);
-    transform: translateX(clamp(28px, 4vw, 88px));
+    transform: translateX(clamp(18px, 2.8vw, 64px));
   }
 }
 
