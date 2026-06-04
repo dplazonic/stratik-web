@@ -575,13 +575,46 @@ h1 {
   letter-spacing: 0;
 }
 
-#about-title {
-  display: inline-block;
+.logo-type {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.24em;
   font-family: "Eurostile Extended", "Eurostile", "Microgramma D Extended", "Montserrat", Arial, sans-serif;
   font-weight: 800;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   transform: scaleX(1.08);
   transform-origin: left center;
+}
+
+.logo-type__name {
+  text-transform: uppercase;
+}
+
+.logo-type__suffix {
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+#about-title .logo-type__suffix {
+  font-size: 0.5em;
+}
+
+.logo-type--inline {
+  display: inline-flex;
+  margin-left: 0.24em;
+  transform: scaleX(1.04);
+  vertical-align: baseline;
+}
+
+.logo-type--inline .logo-type__suffix,
+.footer-brand .logo-type__suffix {
+  font-size: 0.86em;
+}
+
+.footer-brand.logo-type {
+  transform: scaleX(1.06);
 }
 
 .section-heading p:not(.eyebrow),
