@@ -575,6 +575,15 @@ h1 {
   letter-spacing: 0;
 }
 
+#about-title {
+  display: inline-block;
+  font-family: "Eurostile Extended", "Eurostile", "Microgramma D Extended", "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: scaleX(1.08);
+  transform-origin: left center;
+}
+
 .section-heading p:not(.eyebrow),
 .why-copy p,
 .about-copy p,
