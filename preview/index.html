@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stratik | Projektiranje u rudarstvu i geologiji</title>
+    <meta name="description" content="Stratik d.o.o. izrađuje rudarske projekte, elaborate o rezervama i geološku dokumentaciju. Stručna podrška od istraživanja do eksploatacije mineralnih sirovina." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f5f6f3" />
+    <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+    <link rel="apple-touch-icon" href="assets/logo-mark.png" />
+    <link rel="preload" href="assets/montserrat-regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (() => {
+        let theme;
+        try { theme = localStorage.getItem('stratik-preview-theme'); } catch {}
+        document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      })();
+    </script>
+    <script defer src="assets/icon-nodes.js"></script>
+    <script defer src="site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Preskoči na sadržaj</a>
+    <header class="site-header" id="top">
+      <div class="header-inner container">
+        <a class="brand" href="#top" aria-label="Stratik početna">
+          <img class="brand-mark" src="assets/logo-mark.png" alt="" width="40" height="37" />
+          <img class="brand-word" src="assets/wordmark.png" alt="Stratik" width="150" height="25" />
+        </a>
+        <nav class="desktop-nav" aria-label="Glavna navigacija">
+          <a href="#usluge">Usluge</a>
+          <a href="#podrucja">Područja rada</a>
+          <a href="#pristup">Naš pristup</a>
+          <a href="#o-nama">O nama</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Uključi tamni način" title="Uključi tamni način" aria-pressed="false">
+            <span class="theme-sun"><i data-icon="Sun"></i></span>
+            <span class="theme-moon"><i data-icon="Moon"></i></span>
+          </button>
+          <button class="button button-small header-inquiry" type="button" data-inquiry>Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+          <button class="icon-button menu-toggle" type="button" aria-label="Otvori navigaciju" aria-controls="mobile-nav" aria-expanded="false" data-menu-toggle><i data-icon="Menu"></i></button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobilna navigacija" hidden>
+        <a href="#usluge">Usluge <i data-icon="ArrowUpRight"></i></a>
+        <a href="#podrucja">Područja rada <i data-icon="ArrowUpRight"></i></a>
+        <a href="#pristup">Naš pristup <i data-icon="ArrowUpRight"></i></a>
+        <a href="#o-nama">O nama <i data-icon="ArrowUpRight"></i></a>
+        <a href="#kontakt">Kontakt <i data-icon="ArrowUpRight"></i></a>
+        <button class="button" type="button" data-inquiry>Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-inner container">
+          <div class="hero-copy">
+            <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> <span>Stratik <span class="company-suffix">d.o.o.</span></span> <span class="label-divider"></span> Stručnost od temelja</p>
+            <h1 id="hero-title"><span>Projektiranje</span> <span>u rudarstvu</span> <span class="title-muted">i geologiji.</span></h1>
+            <p class="hero-description">Od prvog istraživanja do rudarskog projekta. Povezujemo podatke o terenu s jasnim, pouzdanim tehničkim rješenjima.</p>
+            <div class="hero-actions">
+              <button class="button" type="button" data-inquiry>Razgovarajmo o projektu <i data-icon="ArrowUpRight"></i></button>
+              <a class="text-link" href="#usluge">Istražite usluge <i data-icon="ArrowDown"></i></a>
+            </div>
+          </div>
+          <figure class="hero-art" aria-label="Generativni prikaz terena">
+            <div class="terrain-cross terrain-cross-top" aria-hidden="true"><i data-icon="Plus"></i></div>
+            <div class="terrain-mount" id="terrain" aria-hidden="true"></div>
+            <div class="terrain-cross terrain-cross-bottom" aria-hidden="true"><i data-icon="Plus"></i></div>
+            <figcaption><span>Perspektiva počinje razumijevanjem terena.</span><span class="terrain-caption-line" aria-hidden="true"></span></figcaption>
+          </figure>
+          <div class="hero-foot">
+            <p>Pouzdana dokumentacija.<br /><strong>Čvrsta osnova za sljedeći korak.</strong></p>
+            <div class="project-phases" aria-label="Faze projekta">
+              <a href="#usluga-istrazivanje"><span>01</span> Istraživanje</a><i data-icon="ArrowRight"></i>
+              <a href="#usluga-rezerve"><span>02</span> Rezerve</a><i data-icon="ArrowRight"></i>
+              <a href="#usluga-projekti"><span>03</span> Projektiranje</a>
+            </div>
+            <a class="scroll-link" href="#usluge" aria-label="Pogledajte usluge" title="Pogledajte usluge"><i data-icon="ArrowDown"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section-space" id="usluge" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div><p class="eyebrow section-label"><span>01</span> Stručne usluge</p><h2 id="services-title">Svaka faza projekta.<br /><span class="muted">Jednako temeljit pristup.</span></h2></div>
+            <p class="section-intro">Dokumentacija i stručna podrška za investitore, koncesionare i projekte mineralnih sirovina.</p>
+          </div>
+          <div class="services-grid">
+            <article class="service" id="usluga-istrazivanje" data-reveal>
+              <div class="service-top"><span class="service-icon"><i data-icon="ScanLine"></i></span><span class="index">01 /</span></div>
+              <h3>Dokumentacija za istraživanje</h3>
+              <p>Dobro planiranje počinje razumijevanjem lokacije i podataka koje tek treba prikupiti.</p>
+              <ul><li>Analiza geološke građe</li><li>Planiranje istražnih radova</li><li>Podloge za istraživanje mineralnih sirovina</li></ul>
+              <button class="service-action" type="button" data-inquiry="Istraživanje mineralnih sirovina" aria-label="Pošaljite upit za dokumentaciju za istraživanje">Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+            </article>
+            <article class="service" id="usluga-projekti" data-reveal>
+              <div class="service-top"><span class="service-icon"><i data-icon="Pickaxe"></i></span><span class="index">02 /</span></div>
+              <h3>Rudarski<br class="desktop-break" /> projekti</h3>
+              <p>Tehnički izvediva rješenja za istraživanje, eksploataciju i završno uređenje prostora.</p>
+              <ul><li>Tehnologija i faznost eksploatacije</li><li>Stabilnost kosina i etaža</li><li>Sanacija i završno uređenje</li></ul>
+              <button class="service-action" type="button" data-inquiry="Rudarski projekt" aria-label="Pošaljite upit za rudarski projekt">Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+            </article>
+            <article class="service" id="usluga-rezerve" data-reveal>
+              <div class="service-top"><span class="service-icon"><i data-icon="Layers"></i></span><span class="index">03 /</span></div>
+              <h3>Elaborati o rezervama mineralnih sirovina</h3>
+              <p>Jasna i provjerljiva osnova za utvrđivanje količine i kakvoće mineralne sirovine.</p>
+              <ul><li>Prikaz istražnih radova</li><li>Proračun i kategorizacija rezervi</li><li>Tehničko-ekonomska ocjena</li></ul>
+              <button class="service-action" type="button" data-inquiry="Elaborat o rezervama" aria-label="Pošaljite upit za elaborat o rezervama">Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+            </article>
+            <article class="service" data-reveal>
+              <div class="service-top"><span class="service-icon"><i data-icon="Mountain"></i></span><span class="index">04 /</span></div>
+              <h3>Geološka obrada<br class="desktop-break" /> podataka</h3>
+              <p>Terenske podatke povezujemo u geološki model koji daje smisao sljedećoj odluci.</p>
+              <ul><li>Analiza bušotina, raskopa i profila</li><li>Interpretacija geološkog modela</li><li>Obrada laboratorijskih ispitivanja</li></ul>
+              <button class="service-action" type="button" data-inquiry="Geološka obrada podataka" aria-label="Pošaljite upit za geološku obradu podataka">Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+            </article>
+            <article class="service" data-reveal>
+              <div class="service-top"><span class="service-icon"><i data-icon="FileText"></i></span><span class="index">05 /</span></div>
+              <h3>Cestogradnja<br class="desktop-break" /> i tunelogradnja</h3>
+              <p>Inženjersko-geološka podrška pri izvođenju infrastrukturnih zahvata.</p>
+              <ul><li>IG kartiranje tunelskih iskopa</li><li>IG kartiranje zasijeka</li><li>Stručna interpretacija uvjeta na terenu</li></ul>
+              <button class="service-action" type="button" data-inquiry="Inženjersko-geološke usluge" aria-label="Pošaljite upit za inženjersko-geološke usluge">Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+            </article>
+            <article class="service" data-reveal>
+              <div class="service-top"><span class="service-icon"><i data-icon="MessagesSquare"></i></span><span class="index">06 /</span></div>
+              <h3>Podrška investitorima i koncesionarima</h3>
+              <p>Razumljiv pregled tehničkih zahtjeva i stručna podrška kroz povezane postupke.</p>
+              <ul><li>Planiranje daljnjih aktivnosti</li><li>Usklađivanje dokumentacije</li><li>Podrška u koncesijskim postupcima</li></ul>
+              <button class="service-action" type="button" data-inquiry="Stručna podrška" aria-label="Pošaljite upit za stručnu podršku">Pošaljite upit <i data-icon="ArrowUpRight"></i></button>
+            </article>
+          </div>
+          <div class="services-note" data-reveal><p>Niste sigurni koja vam je dokumentacija potrebna?</p><button class="text-link" type="button" data-inquiry>Pronađimo prvi korak <i data-icon="ArrowUpRight"></i></button></div>
+        </div>
+      </section>
+
+      <section class="expertise" id="podrucja" aria-labelledby="expertise-title">
+        <div class="expertise-image">
+          <img src="assets/quarry.jpg" alt="Pogled iz zraka na etaže kamenoloma i otkrivene slojeve stijene" width="1600" height="842" loading="lazy" />
+          <p class="photo-credit">Kamenolom iz zraka <span>Fotografija: Dion Beetson / Unsplash</span></p>
+        </div>
+        <div class="expertise-content">
+          <div data-reveal><p class="eyebrow section-label"><span>02</span> Područja rada</p><h2 id="expertise-title">Svako ležište<br />ima svoju priču.</h2><p>Promatramo ga individualno. Od geološke građe i kakvoće sirovine do uvjeta eksploatacije i zahtjeva projekta.</p></div>
+          <ul class="materials-list" data-reveal>
+            <li>Tehničko-građevni kamen <span>01</span></li>
+            <li>Građevni pijesak i šljunak <span>02</span></li>
+            <li>Arhitektonsko-građevni kamen <span>03</span></li>
+            <li>Ciglarska glina <span>04</span></li>
+            <li>Karbonatne i industrijske sirovine <span>05</span></li>
+            <li>Druge nemetalne mineralne sirovine <span>06</span></li>
+          </ul>
+          <p class="location-note"><i data-icon="MapPin"></i> Projekti na području Hrvatske</p>
+        </div>
+      </section>
+
+      <section class="process section-space" id="pristup" aria-labelledby="process-title">
+        <div class="container process-layout">
+          <div class="process-intro" data-reveal>
+            <p class="eyebrow section-label"><span>03</span> Naš pristup</p><h2 id="process-title">Jasan proces.<br /><span class="muted">Pouzdana podloga.</span></h2>
+            <p>Od prvog pregleda podataka do završne dokumentacije, znate gdje ste i što slijedi.</p>
+            <a class="text-link" href="#kontakt">Razgovarajmo o vašem projektu <i data-icon="ArrowUpRight"></i></a>
+          </div>
+          <div class="process-steps" data-reveal>
+            <details name="process" open><summary><span class="step-number">01</span><h3>Analiza dokumentacije</h3><i data-icon="Plus"></i></summary><div class="step-body"><p>Pregledavamo postojeće podatke, ranije elaborate, karte, dozvole i rezultate istražnih radova.</p><span class="step-outcome">Polazište: razumijevanje dostupnih podataka</span></div></details>
+            <details name="process"><summary><span class="step-number">02</span><h3>Procjena potreba projekta</h3><i data-icon="Plus"></i></summary><div class="step-body"><p>Utvrđujemo što je poznato, koji podaci nedostaju i koje aktivnosti treba planirati za nastavak projekta.</p><span class="step-outcome">Polazište: jasan redoslijed sljedećih koraka</span></div></details>
+            <details name="process"><summary><span class="step-number">03</span><h3>Obrada i interpretacija</h3><i data-icon="Plus"></i></summary><div class="step-body"><p>Geološke i rudarske podatke sistematiziramo, obrađujemo i povezujemo u stručnu cjelinu.</p><span class="step-outcome">Polazište: provjerljiva stručna osnova</span></div></details>
+            <details name="process"><summary><span class="step-number">04</span><h3>Izrada dokumentacije</h3><i data-icon="Plus"></i></summary><div class="step-body"><p>Izrađujemo elaborat, rudarski projekt ili stručnu podlogu u skladu sa zahtjevima projekta, propisima i pravilima struke.</p><span class="step-outcome">Polazište: precizna i jasno strukturirana dokumentacija</span></div></details>
+            <details name="process"><summary><span class="step-number">05</span><h3>Podrška do završetka</h3><i data-icon="Plus"></i></summary><div class="step-body"><p>Po potrebi pripremamo pojašnjenja i dopune te pružamo tehničku podršku tijekom pregleda dokumentacije.</p><span class="step-outcome">Polazište: stručna podrška kroz postupak</span></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-space" id="o-nama" aria-labelledby="about-title">
+        <div class="container">
+          <div class="about-heading" data-reveal><p class="eyebrow section-label"><span>04</span> O nama</p><h2 id="about-title" class="about-wordmark"><img src="assets/wordmark.png" alt="Stratik" width="470" height="78" loading="lazy" /><span>d.o.o.</span></h2></div>
+          <div class="about-layout">
+            <div class="about-copy" data-reveal><h3>Stručnost u podacima.<br />Odgovornost u odlukama.</h3><p>Stratik je tvrtka specijalizirana za rudarstvo, geologiju i dokumentaciju za mineralne sirovine. Spajamo razumijevanje terena s tehničkom preciznošću i jasnom komunikacijom.</p><p>Naš je cilj pripremiti stručnu podlogu koja je provjerljiva, razumljiva i praktično korisna u stvarnom postupku.</p></div>
+            <ul class="principles" data-reveal><li><i data-icon="Check"></i><span>Pažljiva obrada i interpretacija podataka</span></li><li><i data-icon="Check"></i><span>Precizan proračun i kategorizacija rezervi</span></li><li><i data-icon="Check"></i><span>Dokumentacija usklađena s propisima</span></li><li><i data-icon="Check"></i><span>Jasna i izravna komunikacija</span></li><li><i data-icon="Check"></i><span>Odgovoran odnos prema prostoru i resursu</span></li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-space" id="kontakt" aria-labelledby="contact-title">
+        <div class="container">
+          <p class="eyebrow section-label" data-reveal><span>05</span> Započnimo razgovor</p>
+          <div class="contact-layout"><div data-reveal><h2 id="contact-title">Vaš sljedeći korak<br />počinje ovdje.</h2><p>Recite nam nešto o lokaciji, mineralnoj sirovini i fazi projekta. Zajedno ćemo odrediti što je potrebno.</p><button class="button button-accent" type="button" data-inquiry>Pošaljite projektni upit <i data-icon="ArrowUpRight"></i></button></div><div class="contact-details" data-reveal><span class="eyebrow">Pišite nam izravno</span><a class="email-link" href="mailto:info@stratik.hr">info@stratik.hr <i data-icon="ArrowUpRight"></i></a><p><i data-icon="MapPin"></i> Hrvatska</p><p class="contact-specialty">Rudarstvo. Geologija.<br />Stručna podloga za vaš projekt.</p></div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#top" aria-label="Stratik, povratak na vrh"><img class="brand-mark" src="assets/logo-mark.png" alt="" width="32" height="30" loading="lazy" /><img class="brand-word" src="assets/wordmark.png" alt="Stratik" width="125" height="21" loading="lazy" /><span class="brand-suffix">d.o.o.</span></a><p>&copy; <span data-year>2026</span> Stratik d.o.o.</p><a class="text-link" href="#top">Na vrh <i data-icon="ArrowUp"></i></a></div></footer>
+
+    <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title" aria-describedby="inquiry-description">
+      <div class="dialog-inner">
+        <button class="icon-button dialog-close" type="button" data-close-dialog aria-label="Zatvori obrazac" title="Zatvori obrazac"><i data-icon="X"></i></button>
+        <p class="eyebrow section-label">Projektni upit</p><h2 id="inquiry-title">Recite nam više<br />o svom projektu.</h2><p id="inquiry-description">Nekoliko osnovnih informacija za dobar početak.</p>
+        <form id="inquiry-form">
+          <div class="form-grid"><label>Ime i prezime <span aria-hidden="true">*</span><input name="name" autocomplete="name" maxlength="120" required /></label><label>E-mail <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" maxlength="200" required /></label></div>
+          <div class="form-grid"><label>Tvrtka<input name="company" autocomplete="organization" maxlength="160" /></label><label>Lokacija projekta<input name="location" maxlength="160" /></label></div>
+          <label>Što vam je potrebno?<select name="service"><option value="Početna procjena">Početna procjena / nisam siguran</option><option>Istraživanje mineralnih sirovina</option><option>Rudarski projekt</option><option>Elaborat o rezervama</option><option>Geološka obrada podataka</option><option>Inženjersko-geološke usluge</option><option>Stručna podrška</option></select></label>
+          <label>Kratak opis projekta <span aria-hidden="true">*</span><textarea name="message" rows="3" maxlength="2000" required></textarea></label>
+          <button class="button form-submit" type="submit">Pripremi e-mail upit <i data-icon="ArrowUpRight"></i></button>
+          <p class="form-note">Otvorit će se vaša e-mail aplikacija s pripremljenim upitom. Poruku šaljete iz te aplikacije.</p><p class="form-status" role="status" id="form-status"></p>
+        </form>
+      </div>
+    </dialog>
+  </body>
+</html>
