@@ -26,6 +26,13 @@ h2{font-size:44px}
 .icon-button{border-radius:2px;color:inherit}
 .site-header:not(.is-scrolled) .icon-button{border-color:#ffffff40}
 .site-header:not(.is-scrolled) .icon-button:hover{background:#ffffff18}
+:root[data-theme=light] .site-header:not(.is-scrolled){background:rgba(247,248,245,.88);border-color:var(--line);color:var(--ink)}
+:root[data-theme=light] .site-header:not(.is-scrolled) .logo-light{display:block}
+:root[data-theme=light] .site-header:not(.is-scrolled) .logo-dark{display:none}
+:root[data-theme=light] .site-header:not(.is-scrolled) .header-inquiry{background:var(--button);border-color:var(--button);color:var(--button-ink)}
+:root[data-theme=light] .site-header:not(.is-scrolled) .header-inquiry:hover{background:var(--button-hover);border-color:var(--button-hover)}
+:root[data-theme=light] .site-header:not(.is-scrolled) .icon-button{border-color:var(--line)}
+:root[data-theme=light] .site-header:not(.is-scrolled) .icon-button:hover{background:var(--soft-hover)}
 
 .hero{position:relative;isolation:isolate;background:#19251f;color:#e0e5db;overflow:hidden}
 .hero-landscape{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 48%;z-index:-3;animation:landscape-in 2s var(--ease) both}
