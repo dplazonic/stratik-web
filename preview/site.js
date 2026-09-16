@@ -36,18 +36,18 @@
     themeButton.setAttribute('aria-pressed', String(dark));
     themeButton.setAttribute('aria-label', label);
     themeButton.title = label;
-    document.querySelector('meta[name="theme-color"]').content = dark ? '#1c221e' : '#f5f6f3';
+    document.querySelector('meta[name="theme-color"]').content = dark ? '#151a18' : '#f7f8f5';
     document.dispatchEvent(new CustomEvent('stratik:theme', { detail: theme }));
   }
   applyTheme(root.dataset.theme);
   themeButton.addEventListener('click', () => {
     const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('stratik-preview-theme', theme); } catch {}
+    try { localStorage.setItem('stratik-rework-theme', theme); } catch {}
     applyTheme(theme);
   });
   themeMedia.addEventListener('change', ({ matches }) => {
     let saved;
-    try { saved = localStorage.getItem('stratik-preview-theme'); } catch {}
+    try { saved = localStorage.getItem('stratik-rework-theme'); } catch {}
     if (!saved) applyTheme(matches ? 'dark' : 'light');
   });
 
@@ -146,26 +146,26 @@
   }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
   sections.forEach(section => sectionObserver.observe(section));
 
-  // Keep the generative terrain off mobile to avoid loading its drawing dependencies.
+  const header = document.querySelector('.site-header');
+  const updateHeader = () => header.classList.toggle('is-scrolled', scrollY > 32);
+  addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // Load the geological illustration only near the viewport and on larger screens.
   let terrainPromise;
   const desktopTerrain = matchMedia('(min-width: 701px)');
-  const loadScript = src => new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.append(script);
-  });
   function startTerrain() {
     if (!desktopTerrain.matches || terrainPromise) return;
-    terrainPromise = loadScript('assets/p5.min.js')
-      .then(() => loadScript('assets/perspective-transform.js'))
-      .then(() => loadScript('terrain.js'))
+    terrainPromise = import('./geology-block.js?v=bore-only')
+      .then(module => module.createGeologyBlock(document.getElementById('terrain')))
       .catch(() => {
         document.querySelector('.hero-art').classList.add('terrain-unavailable');
         terrainPromise = undefined;
       });
   }
-  startTerrain();
+  const terrainObserver = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) startTerrain();
+  }, { rootMargin: '200px' });
+  terrainObserver.observe(document.querySelector('.hero-art'));
   desktopTerrain.addEventListener('change', startTerrain);
 })();

@@ -18,7 +18,7 @@
     let ready = false;
 
     function setColor() {
-      fill = document.documentElement.dataset.theme === 'dark' ? 'rgba(181,204,170,0.14)' : 'rgba(30,72,45,0.14)';
+      fill = document.documentElement.dataset.theme === 'dark' ? 'rgba(199,179,125,0.18)' : 'rgba(30,72,45,0.18)';
     }
     function initialize() {
       p.randomSeed(seed);
@@ -102,7 +102,7 @@
     visible = entries[0].isIntersecting;
     instance.updateActivity?.();
   }, { threshold: 0 });
-  observer.observe(document.querySelector('.hero'));
+  observer.observe(document.querySelector('.hero-art'));
   document.addEventListener('visibilitychange', () => instance.updateActivity?.());
   desktop.addEventListener('change', () => instance.updateActivity?.());
 })();
