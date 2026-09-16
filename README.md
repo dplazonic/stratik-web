@@ -8,6 +8,6 @@ This is a plain static site. Connect the GitHub repository to Vercel and use the
 
 - Framework preset: Other
 - Build command: leave empty
-- Output directory: leave empty
+- Output directory: `preview` (set in `vercel.json`)
 
-The main entry file is `index.html`.
+The published entry file is `preview/index.html`. The repository-root `index.html` is the previous version.

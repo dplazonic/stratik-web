@@ -151,21 +151,4 @@
   addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 
-  // Load the geological illustration only near the viewport and on larger screens.
-  let terrainPromise;
-  const desktopTerrain = matchMedia('(min-width: 701px)');
-  function startTerrain() {
-    if (!desktopTerrain.matches || terrainPromise) return;
-    terrainPromise = import('./geology-block.js?v=bore-only')
-      .then(module => module.createGeologyBlock(document.getElementById('terrain')))
-      .catch(() => {
-        document.querySelector('.hero-art').classList.add('terrain-unavailable');
-        terrainPromise = undefined;
-      });
-  }
-  const terrainObserver = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) startTerrain();
-  }, { rootMargin: '200px' });
-  terrainObserver.observe(document.querySelector('.hero-art'));
-  desktopTerrain.addEventListener('change', startTerrain);
 })();
