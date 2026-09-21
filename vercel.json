@@ -1,8 +1,9 @@
 {
-  "outputDirectory": "preview",
+  "buildCommand": "node build.mjs",
+  "outputDirectory": "dist",
   "headers": [
     {
-      "source": "/(.*)\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2)",
+      "source": "/(.*)\\.(css|js|png|jpg|jpeg|gif|svg|webp|avif|ico|woff|woff2)",
       "headers": [
         {
           "key": "Cache-Control",

@@ -7,12 +7,12 @@
     <meta name="description" content="Stratik d.o.o. izrađuje rudarske projekte, elaborate o rezervama i geološku dokumentaciju. Stručna podrška od istraživanja do eksploatacije mineralnih sirovina." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#151a18" />
-    <link rel="icon" type="image/png" href="assets/stratik-color.png" />
-    <link rel="apple-touch-icon" href="assets/stratik-color.png" />
-    <link rel="preload" href="assets/quarry.jpg" as="image" />
-    <link rel="preload" href="assets/montserrat-regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=brand-rework" />
-    <link rel="stylesheet" href="brand.css?v=light-header-map" />
+    <link rel="icon" type="image/png" href="assets/stratik-icon-64.png" />
+    <link rel="apple-touch-icon" href="assets/stratik-icon-180.png" />
+    <link rel="preload" href="assets/quarry.avif" as="image" type="image/avif" fetchpriority="high" />
+    <link rel="preload" href="assets/montserrat-medium-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css?v=performance" />
+    <link rel="stylesheet" href="brand.css?v=performance" />
     <script>
       (() => {
         let theme;
@@ -28,8 +28,8 @@
     <header class="site-header" id="top">
       <div class="header-inner container">
         <a class="brand" href="#hero" aria-label="Stratik početna">
-          <img class="brand-logo logo-light" src="assets/stratik-color.png" alt="Stratik" width="1932" height="1551" />
-          <img class="brand-logo logo-dark" src="assets/stratik-white.png" alt="Stratik" width="1932" height="1551" />
+          <img class="brand-logo logo-light" src="assets/stratik-color-324.webp" alt="Stratik" width="1932" height="1551" />
+          <img class="brand-logo logo-dark" src="assets/stratik-white-324.webp" alt="Stratik" width="1932" height="1551" />
         </a>
         <nav class="desktop-nav" aria-label="Glavna navigacija">
           <a href="#usluge">Usluge</a>
@@ -59,7 +59,11 @@
 
     <main id="main">
       <section class="hero" id="hero" aria-labelledby="hero-title">
-        <img class="hero-landscape" src="assets/quarry.jpg" alt="Etaže kamenoloma i slojevi stijene iz zračne perspektive" width="1600" height="842" fetchpriority="high" />
+        <picture>
+          <source srcset="assets/quarry.avif" type="image/avif" />
+          <source srcset="assets/quarry.webp" type="image/webp" />
+          <img class="hero-landscape" src="assets/quarry.jpg" alt="Etaže kamenoloma i slojevi stijene iz zračne perspektive" width="1600" height="842" fetchpriority="high" />
+        </picture>
         <div class="hero-inner container">
           <div class="hero-copy">
             <p class="eyebrow hero-eyebrow"><span class="label-divider"></span><span>Stratik <span class="company-suffix">d.o.o.</span> / Zagreb</span></p>
@@ -156,7 +160,7 @@
 
       <section class="about section-space" id="o-nama" aria-labelledby="about-title">
         <div class="container">
-          <div class="about-heading" data-reveal><p class="eyebrow section-label"><span>03</span> O nama</p><h2 id="about-title" class="about-wordmark"><img src="assets/stratik-stamp.png" alt="Stratik d.o.o. Zagreb" width="2087" height="686" loading="lazy" /></h2></div>
+          <div class="about-heading" data-reveal><p class="eyebrow section-label"><span>03</span> O nama</p><h2 id="about-title" class="about-wordmark"><img src="assets/stratik-stamp-820.webp" alt="Stratik d.o.o. Zagreb" width="2087" height="686" loading="lazy" /></h2></div>
           <div class="about-layout">
             <div class="about-copy" data-reveal><h3>Stručnost u podacima.<br />Odgovornost u odlukama.</h3><p>Stratik je tvrtka specijalizirana za rudarstvo, geologiju i dokumentaciju za mineralne sirovine. Spajamo razumijevanje terena s tehničkim znanjem i jasnom komunikacijom.</p><p>Naš je cilj pripremiti stručnu podlogu koja je provjerljiva, razumljiva i praktično korisna u stvarnom postupku.</p></div>
             <ul class="principles" data-reveal><li><i data-icon="Check"></i><span>Obrada i interpretacija podataka</span></li><li><i data-icon="Check"></i><span>Proračun i kategorizacija rezervi</span></li><li><i data-icon="Check"></i><span>Dokumentacija usklađena s propisima</span></li><li><i data-icon="Check"></i><span>Jasna i izravna komunikacija</span></li><li><i data-icon="Check"></i><span>Odgovoran odnos prema prostoru i resursu</span></li></ul>
@@ -172,7 +176,7 @@
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#hero" aria-label="Stratik, povratak na vrh"><img class="brand-logo logo-light" src="assets/stratik-black.png" alt="Stratik" width="1932" height="1551" loading="lazy" /><img class="brand-logo logo-dark" src="assets/stratik-white.png" alt="Stratik" width="1932" height="1551" loading="lazy" /></a><div class="footer-meta"><p>&copy; <span data-year>2026</span> Stratik d.o.o.</p><p class="photo-credit">Fotografija kamenoloma: Dion Beetson / Unsplash</p></div><a class="text-link" href="#hero">Na vrh <i data-icon="ArrowUp"></i></a></div></footer>
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#hero" aria-label="Stratik, povratak na vrh"><img class="brand-logo logo-light" src="assets/stratik-black-324.webp" alt="Stratik" width="1932" height="1551" loading="lazy" /><img class="brand-logo logo-dark" src="assets/stratik-white-324.webp" alt="Stratik" width="1932" height="1551" loading="lazy" /></a><div class="footer-meta"><p>&copy; <span data-year>2026</span> Stratik d.o.o.</p><p class="photo-credit">Fotografija kamenoloma: Dion Beetson / Unsplash</p></div><a class="text-link" href="#hero">Na vrh <i data-icon="ArrowUp"></i></a></div></footer>
 
     <dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title" aria-describedby="inquiry-description">
       <div class="dialog-inner">

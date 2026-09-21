@@ -1,7 +1,7 @@
-@font-face{font-family:Montserrat;src:url('assets/montserrat-regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:Montserrat;src:url('assets/montserrat-medium.ttf') format('truetype');font-style:normal;font-weight:500;font-display:swap}
-@font-face{font-family:Montserrat;src:url('assets/montserrat-semibold.ttf') format('truetype');font-style:normal;font-weight:600;font-display:swap}
-@font-face{font-family:Montserrat;src:url('assets/montserrat-bold.ttf') format('truetype');font-style:normal;font-weight:700 800;font-display:swap}
+@font-face{font-family:Montserrat;src:url('assets/montserrat-regular-latin.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Montserrat;src:url('assets/montserrat-medium-latin.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:Montserrat;src:url('assets/montserrat-semibold-latin.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:Montserrat;src:url('assets/montserrat-bold-latin.woff2') format('woff2');font-style:normal;font-weight:700 800;font-display:swap}
 
 :root {
   color-scheme: light;
@@ -238,8 +238,6 @@ textarea {resize:vertical;min-height:86px}
 .form-status:empty {display:none}
 .reveal-ready {opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal-ready.is-visible {opacity:1;transform:none}
-.hero-copy {animation:content-in .85s var(--ease) both}
-.hero-foot {animation:content-in .85s .15s var(--ease) both}
 @keyframes content-in {from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes dialog-in {from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(min-width:1600px) {

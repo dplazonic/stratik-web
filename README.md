@@ -4,10 +4,12 @@ Static website for Stratik d.o.o.
 
 ## Deploy on Vercel
 
-This is a plain static site. Connect the GitHub repository to Vercel and use the default static deployment settings:
+This is a static site with a dependency-free Node.js build. Connect the GitHub repository to Vercel:
 
 - Framework preset: Other
-- Build command: leave empty
-- Output directory: `preview` (set in `vercel.json`)
+- Build command: `node build.mjs`
+- Output directory: `dist` (both settings are in `vercel.json`)
 
-The published entry file is `preview/index.html`. The repository-root `index.html` is the previous version.
+Edit `preview/index.html`, `preview/styles.css` and `preview/brand.css`. Run `node build.mjs` to create the published `dist/index.html` with inline CSS and optimized assets. The repository-root `index.html` is the previous version.
+
+Serve the repository locally and open `/dist/` to test the production build. Browser checks support `BASE_URL` and `EXPECT_INLINE_CSS=1`; see `preview/README.md`.
