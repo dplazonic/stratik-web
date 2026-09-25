@@ -5,7 +5,7 @@ const path = require('node:path');
 const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:3001/preview/';
 
 (async () => {
-  const out = path.join(process.env.TEMP, 'stratik-brand-review');
+  const out = path.join(process.env.TEMP, 'geodraft-brand-review');
   fs.mkdirSync(out, { recursive: true });
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   try {
@@ -17,12 +17,20 @@ const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:3001/preview/';
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(2100);
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
+    assert((await page.title()).startsWith('GEOdraft |'));
+    assert((await page.locator('meta[name="description"]').getAttribute('content')).startsWith('GEOdraft'));
+    assert.deepEqual(await page.locator('.brand-name').allTextContents(), ['GEOdraft', 'GEOdraft', 'GEOdraft']);
+    assert(!/stratik/i.test(await page.locator('body').innerText()));
+    assert((await page.locator('.site-header .brand-logo').evaluate(el => getComputedStyle(el).filter)).includes('invert(1)'));
+    assert.equal(await page.locator('link[rel="icon"]').getAttribute('href'), 'assets/geodraft-icon-64.png');
+    assert.equal(await page.locator('.email-link').getAttribute('href'), 'mailto:info@geodraft.hr');
     assert.equal(await page.locator('.hero-landscape').evaluate(el => getComputedStyle(el).animationName), 'none');
     assert.equal(await page.locator('link[rel="preload"][as="image"]').getAttribute('fetchpriority'), 'high');
     assert(await page.locator('.hero-landscape').evaluate(el => el.currentSrc.endsWith('/quarry.avif')));
     const resources = await page.evaluate(() => performance.getEntriesByType('resource').map(r => r.name));
     assert.equal(resources.filter(url => url.endsWith('/quarry.avif')).length, 1);
-    assert(!resources.some(url => /\.(ttf|jpg|webp)$/.test(url) && !url.includes('stratik-')));
+    assert(!resources.some(url => /\.(ttf|jpg|webp)$/.test(url) && !url.includes('geodraft-')));
+    assert(!resources.some(url => /\/assets\/stratik-/.test(url)));
     if (process.env.EXPECT_INLINE_CSS) assert.equal(await page.locator('link[rel="stylesheet"]').count(), 0);
     await page.screenshot({ path: path.join(out, 'hero-dark.png') });
     assert.equal(await page.locator('#podrucja, #terrain').count(), 0);
@@ -43,6 +51,7 @@ const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:3001/preview/';
     await page.locator('[data-theme-toggle]').click();
     await page.reload({ waitUntil: 'networkidle' });
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
+    assert.equal(await page.locator('.site-header .brand-logo').evaluate(el => getComputedStyle(el).filter), 'none');
     await page.locator('#usluge').scrollIntoViewIfNeeded();
     await page.waitForTimeout(900);
     await page.screenshot({ path: path.join(out, 'services-light.png') });

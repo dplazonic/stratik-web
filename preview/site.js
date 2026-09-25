@@ -106,8 +106,8 @@
       `Usluga: ${text('service')}`,
       '', 'Opis projekta:', text('message')
     ].join('\n');
-    const mail = `mailto:info@stratik.hr?subject=${encodeURIComponent(`Projektni upit: ${text('service')}`)}&body=${encodeURIComponent(body)}`;
-    formStatus.textContent = 'Upit je pripremljen za vašu e-mail aplikaciju. Ako se aplikacija ne otvori, pišite nam na info@stratik.hr.';
+    const mail = `mailto:info@geodraft.hr?subject=${encodeURIComponent(`Projektni upit: ${text('service')}`)}&body=${encodeURIComponent(body)}`;
+    formStatus.textContent = 'Upit je pripremljen za vašu e-mail aplikaciju. Ako se aplikacija ne otvori, pišite nam na info@geodraft.hr.';
     window.location.href = mail;
   });
 

@@ -1,6 +1,6 @@
-# Stratik web
+# GEOdraft web
 
-Static website for Stratik d.o.o.
+Static website for GEOdraft d.o.o.
 
 ## Deploy on Vercel
 
