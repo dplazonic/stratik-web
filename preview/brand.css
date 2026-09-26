@@ -83,11 +83,13 @@ h1{font-size:70px;line-height:1.08;color:#fff}
 .expertise-content h2{font-size:44px;margin-bottom:25px}
 .materials-list li{padding:13px 0;font-size:12px}
 .materials-list span{color:var(--accent-ink)}
-.process{background:var(--soft);border-top:1px solid var(--line)}
 .process-steps details[open]{background:var(--paper)}
 .process-layout{grid-template-columns:1fr 1.12fr;gap:100px}
 .process-intro{top:145px}
-.about{background:var(--paper)}
+.about{background:var(--soft);border-top:1px solid var(--line)}
+.about .process-layout{padding-top:50px}
+.about .process-intro>p{max-width:480px}
+@media(max-width:700px){.about .process-layout{padding-top:30px}}
 .about-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:200px;align-items:center;padding-bottom:40px}
 @media(max-width:1199px){.about-heading{gap:50px}}
 @media(max-width:980px){.about-heading{gap:40px}}
