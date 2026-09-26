@@ -93,9 +93,10 @@ ul {margin:0;padding:0;list-style:none}
 .icon-button:hover {background:var(--soft-hover);border-color:var(--accent)}
 .theme-toggle {position:relative;overflow:hidden}
 .theme-toggle>span {position:absolute;display:grid;place-items:center;transition:transform .65s var(--ease),opacity .45s}
-.theme-moon {transform:scale(.1) rotate(-90deg);opacity:0}
-:root[data-theme=dark] .theme-moon {transform:scale(1) rotate(0);opacity:1}
-:root[data-theme=dark] .theme-sun {transform:scale(.1) rotate(90deg);opacity:0}
+.theme-sun {transform:scale(.1) rotate(90deg);opacity:0}
+.theme-moon {transform:scale(1) rotate(0);opacity:1}
+:root[data-theme=dark] .theme-sun {transform:scale(1) rotate(0);opacity:1}
+:root[data-theme=dark] .theme-moon {transform:scale(.1) rotate(-90deg);opacity:0}
 .menu-toggle,.mobile-nav {display:none}
 .hero {background:var(--soft)}
 .hero-inner {position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:75px}
