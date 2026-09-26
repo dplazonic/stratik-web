@@ -62,6 +62,7 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .hero .button:focus-visible {outline-color:#fff}
 .services h2 {margin-bottom:32px}
 .services-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.services-scroll-track {display:none}
 .service {min-width:0;padding:28px 24px 30px;border:1px solid var(--line);border-radius:2px;background:var(--paper);transition:border-color .2s}
 .service-icon {display:block;height:28px;color:var(--accent-ink);margin-bottom:26px}
 .service-icon .icon {width:27px;height:27px;stroke-width:1.25}
@@ -117,15 +118,24 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
   .hero:before {background:linear-gradient(90deg,rgba(10,24,17,.85),rgba(11,23,17,.52))}
   .services h2 {margin-bottom:24px}
   .services-grid {
-    display:flex;gap:16px;overflow-x:auto;
+    display:flex;gap:12px;overflow-x:auto;
     margin-inline:calc(-1 * var(--gutter));padding:4px var(--gutter) 8px;
     scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);
     overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
     scrollbar-width:none;cursor:grab;
   }
   .services-grid::-webkit-scrollbar {display:none}
-  .services-grid:focus-visible {outline-offset:-3px}
-  .service {flex:0 0 85vw;scroll-snap-align:start;padding:26px 24px;min-height:274px}
+  .js .services-grid {
+    --edge-left:1;--edge-right:1;
+    -webkit-mask-image:linear-gradient(to right,rgba(0,0,0,var(--edge-left)),#000 24px,#000 calc(100% - 24px),rgba(0,0,0,var(--edge-right)));
+    mask-image:linear-gradient(to right,rgba(0,0,0,var(--edge-left)),#000 24px,#000 calc(100% - 24px),rgba(0,0,0,var(--edge-right)));
+  }
+  .js .services-grid.can-scroll-back {--edge-left:0}
+  .js .services-grid.can-scroll-forward {--edge-right:0}
+  .js .services-grid:focus-visible {outline-offset:-3px;-webkit-mask-image:none;mask-image:none}
+  .service {flex:0 0 82vw;scroll-snap-align:start;padding:26px 24px;min-height:274px}
+  .services-scroll-track {display:block;height:4px;margin-top:16px;background:var(--line);border-radius:2px;overflow:hidden}
+  .services-scroll-thumb {display:block;height:100%;background:var(--accent-ink);border-radius:2px}
   .services-grid.is-dragging {scroll-snap-type:none;cursor:grabbing;user-select:none}
   .service h3 {min-height:0}
   .service p {font-size:15px}

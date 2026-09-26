@@ -64,6 +64,25 @@
 
   const slider = document.querySelector('.services-grid');
   const cards = [...slider.children];
+  const scrollTrack = document.createElement('div');
+  scrollTrack.className = 'services-scroll-track';
+  scrollTrack.setAttribute('aria-hidden', 'true');
+  const scrollThumb = document.createElement('span');
+  scrollThumb.className = 'services-scroll-thumb';
+  scrollTrack.append(scrollThumb);
+  slider.after(scrollTrack);
+  function updateScrollIndicator() {
+    if (!mobileMedia.matches) return;
+    const ratio = slider.clientWidth / slider.scrollWidth;
+    const max = slider.scrollWidth - slider.clientWidth;
+    const progress = max > 0 ? Math.max(0, Math.min(1, slider.scrollLeft / max)) : 0;
+    slider.classList.toggle('can-scroll-back', slider.scrollLeft > 2);
+    slider.classList.toggle('can-scroll-forward', slider.scrollLeft < max - 2);
+    scrollThumb.style.width = `${ratio * 100}%`;
+    scrollThumb.style.transform = `translateX(${progress * (1 - ratio) / ratio * 100}%)`;
+  }
+  slider.addEventListener('scroll', updateScrollIndicator, { passive: true });
+  new ResizeObserver(updateScrollIndicator).observe(slider);
   const scrollBehavior = () => motionMedia.matches ? 'instant' : 'smooth';
   const positions = () => {
     const start = cards[0].offsetLeft;

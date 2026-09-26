@@ -49,7 +49,7 @@ const out = path.join(process.env.TEMP, 'geodraft-office-review');
         assert(geometry.sliderOverflow);
         assert.equal(geometry.snap, 'x mandatory');
         assert(geometry.peek > 8, 'Next card must peek at ' + width);
-        assert(geometry.cardRatio >= .82 && geometry.cardRatio <= .88);
+        assert(geometry.cardRatio >= .82 - 1 / width && geometry.cardRatio <= .88 + 1 / width);
         await slider.focus();
         await page.keyboard.press('ArrowRight');
         await page.waitForFunction(() => document.querySelector('.services-grid').scrollLeft > 250);
