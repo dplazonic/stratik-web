@@ -71,39 +71,69 @@
   scrollThumb.className = 'services-scroll-thumb';
   scrollTrack.append(scrollThumb);
   slider.after(scrollTrack);
-  function updateScrollIndicator() {
-    if (!mobileMedia.matches) return;
-    const ratio = slider.clientWidth / slider.scrollWidth;
-    const max = slider.scrollWidth - slider.clientWidth;
-    const progress = max > 0 ? Math.max(0, Math.min(1, slider.scrollLeft / max)) : 0;
-    slider.classList.toggle('can-scroll-back', slider.scrollLeft > 2);
-    slider.classList.toggle('can-scroll-forward', slider.scrollLeft < max - 2);
-    scrollThumb.style.width = `${ratio * 100}%`;
-    scrollThumb.style.transform = `translateX(${progress * (1 - ratio) / ratio * 100}%)`;
-  }
-  slider.addEventListener('scroll', updateScrollIndicator, { passive: true });
-  new ResizeObserver(updateScrollIndicator).observe(slider);
+  let loopEnabled = false;
+  let activeCard = 0;
+  let restoringLayout = false;
+  let drag;
+  let settleTimer;
   const scrollBehavior = () => motionMedia.matches ? 'instant' : 'smooth';
   const positions = () => {
-    const start = cards[0].offsetLeft;
-    const max = slider.scrollWidth - slider.clientWidth;
-    return cards.map(card => Math.min(card.offsetLeft - start, max));
+    const start = slider.getBoundingClientRect().left + parseFloat(getComputedStyle(slider).paddingLeft);
+    return [...slider.children].map(card => card.getBoundingClientRect().left - start + slider.scrollLeft);
   };
   const nearestIndex = () => positions().reduce((best, pos, index, points) =>
     Math.abs(pos - slider.scrollLeft) < Math.abs(points[best] - slider.scrollLeft) ? index : best, 0);
-  const goTo = index => slider.scrollTo({ left: positions()[index], behavior: scrollBehavior() });
+  const realIndex = index => ((index - cards.length) % cards.length + cards.length) % cards.length;
+  const goTo = (index, behavior = scrollBehavior()) => slider.scrollTo({ left: positions()[index], behavior });
+
+  // Copies on either side preserve native swiping; reset to the identical middle card after settling.
+  function makeLoopCopy(card) {
+    const copy = card.cloneNode(true);
+    copy.dataset.loopCopy = '';
+    copy.setAttribute('aria-hidden', 'true');
+    copy.setAttribute('inert', '');
+    [copy, ...copy.querySelectorAll('[id], [aria-labelledby]')].forEach(element => {
+      element.removeAttribute('id');
+      element.removeAttribute('aria-labelledby');
+    });
+    return copy;
+  }
+  function settleLoop() {
+    clearTimeout(settleTimer);
+    if (!loopEnabled || !mobileMedia.matches || restoringLayout || drag) return;
+    const index = nearestIndex();
+    const target = positions()[index];
+    if (Math.abs(slider.scrollLeft - target) > 2) return;
+    activeCard = realIndex(index);
+    if (index < cards.length || index >= cards.length * 2) goTo(cards.length + activeCard, 'instant');
+    updateScrollIndicator();
+  }
+  function updateScrollIndicator() {
+    if (!loopEnabled || !mobileMedia.matches || restoringLayout) return;
+    activeCard = realIndex(nearestIndex());
+    const ratio = 1 / cards.length;
+    const progress = activeCard / (cards.length - 1);
+    slider.classList.add('can-scroll-back', 'can-scroll-forward');
+    scrollThumb.style.width = `${ratio * 100}%`;
+    scrollThumb.style.transform = `translateX(${progress * (1 - ratio) / ratio * 100}%)`;
+  }
+  slider.addEventListener('scroll', () => {
+    updateScrollIndicator();
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(settleLoop, 180);
+  }, { passive: true });
+  slider.addEventListener('scrollend', settleLoop);
 
   slider.addEventListener('keydown', event => {
     if (!mobileMedia.matches || event.altKey || event.ctrlKey || event.metaKey) return;
     const current = nearestIndex();
-    const targets = { ArrowLeft: Math.max(0, current - 1), ArrowRight: Math.min(cards.length - 1, current + 1), Home: 0, End: cards.length - 1 };
+    const targets = { ArrowLeft: Math.max(0, current - 1), ArrowRight: Math.min(slider.children.length - 1, current + 1), Home: cards.length, End: cards.length * 2 - 1 };
     if (!(event.key in targets)) return;
     event.preventDefault();
     goTo(targets[event.key]);
   });
 
   // Touch and trackpad stay native; pointer handling adds mouse dragging only.
-  let drag;
   slider.addEventListener('pointerdown', event => {
     if (!mobileMedia.matches || event.pointerType !== 'mouse' || event.button !== 0) return;
     event.preventDefault();
@@ -133,15 +163,40 @@
 
   function updateLayout() {
     slider.tabIndex = mobileMedia.matches ? 0 : -1;
-    if (!mobileMedia.matches) {
+    clearTimeout(settleTimer);
+    if (mobileMedia.matches && !loopEnabled) {
+      const restoreCard = activeCard;
+      restoringLayout = true;
+      slider.prepend(...cards.map(makeLoopCopy));
+      slider.append(...cards.map(makeLoopCopy));
+      loopEnabled = true;
+      goTo(cards.length + restoreCard, 'instant');
+      requestAnimationFrame(() => {
+        if (loopEnabled && mobileMedia.matches) goTo(cards.length + restoreCard, 'instant');
+        restoringLayout = false;
+        updateScrollIndicator();
+      });
+    } else if (!mobileMedia.matches) {
+      loopEnabled = false;
+      restoringLayout = false;
+      slider.querySelectorAll('[data-loop-copy]').forEach(copy => copy.remove());
       setMenu(false);
       drag = undefined;
-      slider.classList.remove('is-dragging');
+      slider.classList.remove('is-dragging', 'can-scroll-back', 'can-scroll-forward');
       slider.scrollLeft = 0;
     }
   }
   mobileMedia.addEventListener('change', updateLayout);
   updateLayout();
+  let sliderWidth = slider.clientWidth;
+  new ResizeObserver(() => {
+    if (slider.clientWidth === sliderWidth) return;
+    sliderWidth = slider.clientWidth;
+    if (loopEnabled && !restoringLayout && !drag) {
+      goTo(cards.length + activeCard, 'instant');
+      updateScrollIndicator();
+    }
+  }).observe(slider);
 
   document.querySelector('[data-year]').textContent = new Date().getFullYear();
   const sectionObserver = new IntersectionObserver(entries => {

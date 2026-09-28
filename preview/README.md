@@ -22,7 +22,7 @@ Assets:
 - p5.js 0.5.10: existing sketch dependency, LGPL-2.1.
 - Montserrat: Google Fonts, SIL Open Font License.
 
-Performance assets: the original 1600x842 quarry JPEG is preserved as fallback, with AVIF (quality 35, effort 7) and WebP (quality 60, effort 6) derivatives made with Sharp. FontTools converts the four original TTF weights to WOFF2 with Latin and Latin Extended coverage (`U+0000-024F,U+1E00-1EFF,U+2000-206F,U+20A0-20CF`), retaining Croatian characters and layout features. The AVIF and medium font are preloaded; other formats are not downloaded by supporting browsers.
+Performance assets: the quarry photograph now uses a 2560x1347 copy of the same Dion Beetson image, retrieved from https://geostratconsulting.co.za/wp-content/uploads/2022/09/dion-beetson-oF7hh97lVqA-unsplash-scaled.jpg. Sharp produces 1280px mobile and 2560px desktop AVIF (quality 60) and WebP (quality 82) variants, plus a JPEG fallback. Matching media queries preload only the relevant AVIF. The previous 1600px files remain unused. FontTools converts the four original TTF weights to WOFF2 with Latin and Latin Extended coverage (`U+0000-024F,U+1E00-1EFF,U+2000-206F,U+20A0-20CF`), retaining Croatian characters and layout features.
 
 Run `node build.mjs` from the repository root before production testing. Vercel serves the generated `dist` directory, with both stylesheets inlined in document order to avoid render-blocking CSS requests. Source preview remains usable without a build. The page allows indexing after publication.
 

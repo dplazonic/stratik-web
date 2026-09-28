@@ -63,7 +63,8 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .services h2 {margin-bottom:32px}
 .services-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .services-scroll-track {display:none}
-.service {min-width:0;padding:28px 24px 30px;border:1px solid var(--line);border-radius:2px;background:var(--paper);transition:border-color .2s}
+.service {min-width:0;padding:28px 24px 30px;border:1px solid var(--line);border-radius:2px;background:color-mix(in srgb,#183c2d 6%,var(--paper));transition:border-color .2s}
+:root[data-theme=dark] .service {background:color-mix(in srgb,#183c2d 30%,var(--paper))}
 .service-icon {display:block;height:28px;color:var(--accent-ink);margin-bottom:26px}
 .service-icon .icon {width:27px;height:27px;stroke-width:1.25}
 .service h3 {font-weight:500;min-height:53px}

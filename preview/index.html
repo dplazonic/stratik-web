@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GEOdraft | Projektiranje u rudarstvu i geologiji</title>
-    <meta name="description" content="GEOdraft pruža stručne usluge u području rudarstva i geologije, uključujući rudarske projekte, elaborate rezervi i geološka istraživanja." />
+    <meta name="description" content="GEOdraft pruža stručne usluge u području rudarstva i geologije, uključujući rudarske projekte, elaborate o rezervama i geološka istraživanja." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#f7f8f5" />
     <link rel="icon" type="image/png" href="assets/geodraft-icon-64.png" />
     <link rel="apple-touch-icon" href="assets/geodraft-icon-180.png" />
-    <link rel="preload" href="assets/quarry.avif" as="image" type="image/avif" fetchpriority="high" />
+    <link rel="preload" href="assets/quarry-detail-1280.avif" as="image" type="image/avif" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" href="assets/quarry-detail-2560.avif" as="image" type="image/avif" media="(min-width: 768px)" fetchpriority="high" />
     <link rel="preload" href="assets/montserrat-medium-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css?v=office" />
     <link rel="stylesheet" href="brand.css?v=office" />
@@ -22,7 +23,7 @@
       })();
     </script>
     <script defer src="assets/icon-nodes.js"></script>
-    <script defer src="site.js?v=slider-overflow"></script>
+    <script defer src="site.js?v=slider-loop"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Preskoči na sadržaj</a>
@@ -57,9 +58,11 @@
     <main id="main" tabindex="-1">
       <section class="hero" id="hero" aria-labelledby="hero-title">
         <picture>
-          <source srcset="assets/quarry.avif" type="image/avif" />
-          <source srcset="assets/quarry.webp" type="image/webp" />
-          <img class="hero-landscape" src="assets/quarry.jpg" alt="Etaže kamenoloma i slojevi stijene iz zračne perspektive" width="1600" height="842" fetchpriority="high" />
+          <source media="(max-width: 767px)" srcset="assets/quarry-detail-1280.avif" type="image/avif" />
+          <source srcset="assets/quarry-detail-2560.avif" type="image/avif" />
+          <source media="(max-width: 767px)" srcset="assets/quarry-detail-1280.webp" type="image/webp" />
+          <source srcset="assets/quarry-detail-2560.webp" type="image/webp" />
+          <img class="hero-landscape" src="assets/quarry-detail.jpg" alt="Etaže kamenoloma i slojevi stijene iz zračne perspektive" width="2560" height="1347" fetchpriority="high" />
         </picture>
         <div class="hero-inner container">
           <div class="hero-copy">
@@ -82,8 +85,8 @@
             </article>
             <article class="service" id="usluga-rezerve" aria-labelledby="reserves-title">
               <span class="service-icon"><i data-icon="Layers"></i></span>
-              <h3 id="reserves-title">Elaborati rezervi</h3>
-              <p>Elaborati o rezervama mineralnih sirovina kategorija B i C1 te prateća stručna dokumentacija.</p>
+              <h3 id="reserves-title">Elaborati o rezervama</h3>
+              <p>Elaborat o rezervama mineralnih sirovina i prateća dokumentacija.</p>
             </article>
             <article class="service" id="usluga-istrazivanje" aria-labelledby="research-title">
               <span class="service-icon"><i data-icon="Mountain"></i></span>
@@ -104,7 +107,7 @@
           <h2 id="about-title">O nama</h2>
           <div class="about-copy">
             <p>GEOdraft pruža stručne usluge u području rudarstva i geologije, s naglaskom na projektiranje, istraživanje i procjenu rezervi mineralnih sirovina.</p>
-            <p>Iskustvo obuhvaća rad na eksploatacijskim poljima tehničko-građevnog i arhitektonsko-građevnog kamena, pijeska i šljunka te drugim projektima iz područja rudarstva i inženjerske geologije.</p>
+            <p>Naše iskustvo obuhvaća izradu rudarskih projekata, elaborata o rezervama mineralnih sirovina i planova istražnih radova za tehničko-građevni i arhitektonsko-građevni kamen, pijesak i šljunak.</p>
           </div>
         </div>
       </section>
