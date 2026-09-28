@@ -10,7 +10,7 @@
   --accent:#d1b574;
   --accent-ink:#7a612d;
   --gutter:64px;
-  --header-height:82px;
+  --header-height:68px;
 }
 :root[data-theme=dark] {
   color-scheme:dark;
@@ -24,5 +24,5 @@
   --accent-ink:#d1b574;
 }
 @media(max-width:1199px) {:root {--gutter:40px}}
-@media(max-width:767px) {:root {--gutter:24px;--header-height:68px}}
+@media(max-width:767px) {:root {--gutter:24px;--header-height:60px}}
 @media(max-width:374px) {:root {--gutter:20px}}
