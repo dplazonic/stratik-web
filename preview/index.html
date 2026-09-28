@@ -12,8 +12,8 @@
     <link rel="preload" href="assets/quarry-detail-1280.avif" as="image" type="image/avif" media="(max-width: 767px)" fetchpriority="high" />
     <link rel="preload" href="assets/quarry-detail-2560.avif" as="image" type="image/avif" media="(min-width: 768px)" fetchpriority="high" />
     <link rel="preload" href="assets/montserrat-medium-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=profile" />
-    <link rel="stylesheet" href="brand.css?v=profile" />
+    <link rel="stylesheet" href="styles.css?v=company-card" />
+    <link rel="stylesheet" href="brand.css?v=company-card" />
     <script>
       (() => {
         let theme;
@@ -23,7 +23,7 @@
       })();
     </script>
     <script defer src="assets/icon-nodes.js"></script>
-    <script defer src="site.js?v=slider-loop"></script>
+    <script defer src="site.js?v=company-card"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Preskoči na sadržaj</a>
@@ -69,7 +69,7 @@
             <h1 id="hero-title">GEO<span>draft</span></h1>
             <p class="hero-subtitle">Projektiranje u rudarstvu i geologiji</p>
             <p class="hero-description">Stručna podrška u istraživanju, projektiranju i gospodarenju mineralnim sirovinama.</p>
-            <a class="hero-contact" href="#kontakt">Kontakt <i data-icon="ArrowDown"></i></a>
+            <a class="hero-contact" href="mailto:info@geodraft.hr">info@geodraft.hr <i data-icon="ArrowUpRight"></i></a>
           </div>
         </div>
       </section>
@@ -86,7 +86,7 @@
             <article class="service" id="usluga-rezerve" aria-labelledby="reserves-title">
               <span class="service-icon"><i data-icon="Layers"></i></span>
               <h3 id="reserves-title">Elaborati o rezervama</h3>
-              <p>Elaborat o rezervama mineralnih sirovina i prateća dokumentacija.</p>
+              <p>Izrada elaborata o rezervama i prateća dokumentacija.</p>
             </article>
             <article class="service" id="usluga-istrazivanje" aria-labelledby="research-title">
               <span class="service-icon"><i data-icon="Mountain"></i></span>
@@ -102,26 +102,26 @@
         </div>
       </section>
 
-      <section class="about section-space" id="o-nama" aria-labelledby="about-title">
-        <div class="container about-layout">
-          <h2 id="about-title">O nama</h2>
-          <div class="about-copy">
-            <p>GEOdraft je projektni ured za rudarsku i geološku dokumentaciju u području mineralnih sirovina.</p>
-            <p>Izrađujemo rudarske projekte, elaborate o rezervama i planove istražnih radova za tehničko-građevni i arhitektonsko-građevni kamen, pijesak i šljunak.</p>
-          </div>
-        </div>
-      </section>
+      <div class="company-profile">
+        <div class="container company-layout">
+          <section class="about" id="o-nama" aria-labelledby="about-title">
+            <h2 id="about-title">O nama</h2>
+            <div class="about-copy">
+              <p>GEOdraft je projektni ured za rudarsku i geološku dokumentaciju u području mineralnih sirovina.</p>
+              <p>Izrađujemo rudarske projekte, elaborate o rezervama i planove istražnih radova za sve vrste mineralnih sirovina.</p>
+            </div>
+          </section>
 
-      <section class="contact section-space" id="kontakt" aria-labelledby="contact-title">
-        <div class="container contact-layout">
-          <h2 id="contact-title">Kontakt</h2>
-          <address class="contact-details">
-            <p class="contact-company">GEOdraft d.o.o.</p>
-            <p>Zagreb</p>
-            <a class="email-link" href="mailto:info@geodraft.hr">info@geodraft.hr <i data-icon="ArrowUpRight"></i></a>
-          </address>
+          <section class="contact" id="kontakt" aria-labelledby="contact-title">
+            <h2 id="contact-title">Kontakt</h2>
+            <address class="contact-details">
+              <p class="contact-company">GEOdraft d.o.o.</p>
+              <p>Zagreb</p>
+              <a class="email-link" href="mailto:info@geodraft.hr">info@geodraft.hr <i data-icon="ArrowUpRight"></i></a>
+            </address>
+          </section>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -130,7 +130,6 @@
           <p>&copy; <span data-year>2026</span> GEOdraft d.o.o. <span class="footer-description">Projektiranje u rudarstvu i geologiji</span></p>
           <p class="photo-credit">Fotografija kamenoloma: Dion Beetson / Unsplash</p>
         </div>
-        <a href="mailto:info@geodraft.hr">info@geodraft.hr</a>
         <a class="icon-button" href="#hero" aria-label="Na vrh stranice" title="Na vrh stranice"><i data-icon="ArrowUp"></i></a>
       </div>
     </footer>
