@@ -25,6 +25,28 @@
   }
   renderIcons();
 
+  const hero = document.querySelector('.hero');
+  const heroImages = hero.querySelectorAll('.hero-landscape');
+  let currentSlide = 0;
+  let slideTimer;
+
+  function showSlide(index) {
+    currentSlide = index;
+    hero.dataset.slide = String(index);
+    heroImages.forEach((img, imageIndex) => img.setAttribute('aria-hidden', String(imageIndex !== index)));
+  }
+
+  function scheduleSlides() {
+    clearInterval(slideTimer);
+    if (!motionMedia.matches && !document.hidden) {
+      slideTimer = setInterval(() => showSlide((currentSlide + 1) % heroImages.length), 7000);
+    }
+  }
+
+  document.addEventListener('visibilitychange', scheduleSlides);
+  motionMedia.addEventListener('change', scheduleSlides);
+  scheduleSlides();
+
   function applyTheme(theme) {
     root.dataset.theme = theme;
     const dark = theme === 'dark';

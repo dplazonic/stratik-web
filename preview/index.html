@@ -23,7 +23,7 @@
       })();
     </script>
     <script defer src="assets/icon-nodes.js"></script>
-    <script defer src="site.js?v=company-card"></script>
+    <script defer src="site.js?v=hero-auto"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Preskoči na sadržaj</a>
@@ -56,12 +56,18 @@
     </header>
 
     <main id="main" tabindex="-1">
-      <section class="hero" id="hero" aria-labelledby="hero-title">
+      <section class="hero" id="hero" data-slide="0" aria-labelledby="hero-title">
         <picture>
           <source media="(max-width: 767px)" srcset="assets/quarry-sketch-1280.avif" type="image/avif" />
           <source srcset="assets/quarry-sketch-1672.avif" type="image/avif" />
           <source media="(max-width: 767px)" srcset="assets/quarry-sketch-1280.webp" type="image/webp" />
           <img class="hero-landscape" src="assets/quarry-sketch-1672.webp" alt="Skica kamenoloma s etažama, pristupnim putovima i izohipsama okolnog terena" width="1672" height="941" fetchpriority="high" />
+        </picture>
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/gravel-sketch-1280.avif" type="image/avif" />
+          <source srcset="assets/gravel-sketch-1672.avif" type="image/avif" />
+          <source media="(max-width: 767px)" srcset="assets/gravel-sketch-1280.webp" type="image/webp" />
+          <img class="hero-landscape hero-landscape--alternate" src="assets/gravel-sketch-1672.webp" alt="Skica šljunčare s vodom, obalnim kosinama i izohipsama okolnog terena" width="1672" height="941" loading="lazy" decoding="async" aria-hidden="true" />
         </picture>
         <div class="hero-inner container">
           <div class="hero-copy">

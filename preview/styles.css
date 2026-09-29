@@ -52,6 +52,8 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .hero {position:relative;display:flex;flex-grow:1;isolation:isolate;overflow:hidden;background:#f7f8f5;color:#183c2d}
 .hero>picture {display:contents}
 .hero-landscape {position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:65% 50%}
+.hero-landscape--alternate {opacity:0;transition:opacity .8s ease}
+.hero[data-slide="1"] .hero-landscape--alternate {opacity:1}
 .hero:before {content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(247,248,245,.92),rgba(247,248,245,.7) 40%,rgba(247,248,245,0) 72%)}
 :root[data-theme=dark] .hero {background:#19251f;color:#f7f8f5}
 :root[data-theme=dark] .hero:before {background:linear-gradient(90deg,rgba(10,24,17,.92),rgba(11,23,17,.82) 42%,rgba(12,23,18,.38) 85%)}
