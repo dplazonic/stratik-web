@@ -51,13 +51,14 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .menu-toggle,.mobile-nav {display:none}
 .hero {position:relative;display:flex;flex-grow:1;isolation:isolate;overflow:hidden;background:#f7f8f5;color:#183c2d}
 .hero>picture {display:contents}
-.hero-landscape {position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:65% 50%}
+.hero-landscape {position:absolute;inset:0 0 0 auto;z-index:-2;width:72%;height:100%;object-fit:cover;object-position:center}
 .hero-landscape--alternate {opacity:0;transition:opacity .8s ease}
 .hero[data-slide="1"] .hero-landscape--alternate {opacity:1}
-.hero:before {content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(247,248,245,.92),rgba(247,248,245,.7) 40%,rgba(247,248,245,0) 72%)}
+.hero:before {content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(247,248,245,.98),rgba(247,248,245,.94) 25%,rgba(247,248,245,.78) 43%,rgba(247,248,245,0) 75%)}
 :root[data-theme=dark] .hero {background:#19251f;color:#f7f8f5}
-:root[data-theme=dark] .hero:before {background:linear-gradient(90deg,rgba(10,24,17,.92),rgba(11,23,17,.82) 42%,rgba(12,23,18,.38) 85%)}
-.hero-inner {min-height:360px;display:flex;align-items:center;padding-block:48px}
+:root[data-theme=dark] .hero-landscape {-webkit-mask-image:linear-gradient(90deg,transparent,#000 32%);mask-image:linear-gradient(90deg,transparent,#000 32%)}
+:root[data-theme=dark] .hero:before {background:linear-gradient(90deg,rgba(10,24,17,.97),rgba(11,23,17,.91) 28%,rgba(12,23,18,.52) 62%,rgba(12,23,18,.2) 85%)}
+.hero-inner {min-height:460px;display:flex;align-items:center;padding-block:48px}
 .hero-copy {max-width:620px}
 .hero h1 {font-size:50px;font-weight:700;color:inherit;line-height:1.1}
 .hero h1>span {font-weight:500}
@@ -129,9 +130,10 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
   .hero-subtitle {font-size:21px;max-width:350px;margin-top:14px}
   .hero-description {font-size:15px;max-width:350px;margin-top:14px}
   .hero-contact {margin-top:18px}
-  .hero-landscape {object-position:65% 50%}
-  .hero:before {background:linear-gradient(90deg,rgba(247,248,245,.94),rgba(247,248,245,.72))}
-  :root[data-theme=dark] .hero:before {background:linear-gradient(90deg,rgba(10,24,17,.92),rgba(11,23,17,.78))}
+  .hero-landscape {inset:0;width:100%;height:100%;object-position:65% 50%}
+  :root[data-theme=dark] .hero-landscape {-webkit-mask-image:none;mask-image:none}
+  .hero:before {background:linear-gradient(90deg,rgba(247,248,245,.78),rgba(247,248,245,.55))}
+  :root[data-theme=dark] .hero:before {background:linear-gradient(90deg,rgba(10,24,17,.9),rgba(11,23,17,.76))}
   .services h2 {margin-bottom:24px}
   .services-grid {
     display:flex;gap:12px;overflow-x:auto;
