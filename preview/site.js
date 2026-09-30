@@ -59,7 +59,7 @@
   applyTheme(root.dataset.theme);
   themeButton.addEventListener('click', () => {
     const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('geodraft-theme', theme); } catch {}
+    try { localStorage.setItem('litologik-theme', theme); } catch {}
     applyTheme(theme);
   });
 

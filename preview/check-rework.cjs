@@ -22,12 +22,12 @@ const waitForCard = (page, index) => page.waitForFunction(index => {
       await page.goto(baseUrl, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('h1').count(), 1);
-      assert.equal(await page.locator('h1').innerText(), 'GEOdraft');
+      assert.equal(await page.locator('h1').innerText(), 'Litologik');
       assert.deepEqual(await page.locator('main section').evaluateAll(els => els.map(el => el.id)), ['hero','usluge','o-nama','kontakt']);
       assert.deepEqual(await page.locator('.service:not([data-loop-copy]) h3').allTextContents(), ['Rudarski projekti','Elaborati o rezervama','Geološka istraživanja','Stručna podrška']);
       assert.equal(await page.locator('dialog, .process-steps, [data-inquiry]').count(), 0);
-      assert.equal(await page.locator('.hero-contact').getAttribute('href'), 'mailto:info@geodraft.hr');
-      assert.equal(await page.locator('.email-link').getAttribute('href'), 'mailto:info@geodraft.hr');
+      assert.equal(await page.locator('.hero-contact').getAttribute('href'), 'mailto:info@litologik.hr');
+      assert.equal(await page.locator('.email-link').getAttribute('href'), 'mailto:info@litologik.hr');
       if (width < 768) await waitForCard(page, 0);
       const geometry = await page.evaluate(() => {
         const slider = document.querySelector('.services-grid');

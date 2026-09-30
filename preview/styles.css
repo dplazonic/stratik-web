@@ -29,10 +29,7 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .site-header {position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
 .header-inner {min-height:var(--header-height);display:flex;align-items:center;gap:32px}
 .brand {display:inline-flex;align-items:center;gap:10px;flex:none;color:var(--ink)}
-.brand-logo {width:66px;height:31px}
-.brand-name {font-size:17px;font-weight:700;line-height:1.15;white-space:nowrap}
-.brand-name>span {font-weight:500}
-:root[data-theme=dark] .brand-logo {filter:brightness(0) invert(1)}
+.brand-name {font-size:20px;font-weight:700;line-height:1.15;white-space:nowrap}
 .desktop-nav {display:flex;gap:32px;align-items:center;margin-left:auto}
 .desktop-nav a {position:relative;padding:10px 0;color:var(--ink);font-size:14px;font-weight:500}
 .desktop-nav a:after {content:'';position:absolute;left:0;right:0;bottom:3px;height:1px;background:var(--accent-ink);transform:scaleX(0);transform-origin:left;transition:transform .2s}
@@ -61,7 +58,6 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .hero-inner {min-height:460px;display:flex;align-items:center;padding-block:48px}
 .hero-copy {max-width:620px}
 .hero h1 {font-size:50px;font-weight:700;color:inherit;line-height:1.1}
-.hero h1>span {font-weight:500}
 .hero-subtitle {font-size:22px;font-weight:500;line-height:1.4;margin-top:14px;max-width:560px}
 .hero-description {font-size:16px;line-height:1.7;margin-top:14px;max-width:490px;color:#35483d}
 :root[data-theme=dark] .hero-description {color:#edf0ea}
@@ -116,8 +112,7 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
   h3 {font-size:21px}
   .section-space {padding-block:36px}
   .header-inner {gap:16px}
-  .brand-logo {width:54px;height:25px}
-  .brand-name {font-size:15px}
+  .brand-name {font-size:18px}
   .desktop-nav {gap:0 16px;flex-wrap:wrap;min-width:0}
   .desktop-nav a {font-size:13px}
   .js .desktop-nav {display:none}
