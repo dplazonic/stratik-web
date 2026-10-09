@@ -1,4 +1,4 @@
-# GEOdraft website preview
+# Litologik website preview
 
 Visit `http://127.0.0.1:3001/preview/?v=new-brand#top` through the local server (`node server.mjs 3001` from the repository root).
 
@@ -10,12 +10,12 @@ Content: concise hero, six services, project process, company and contact.
 
 Motion: the hero is visible immediately for fast LCP, section content reveals on scroll, and interactive elements use restrained hover transitions. The geological block section was removed. The original maptrace remains in `terrain.js` for reference and is not loaded.
 
-Dark is the initial theme for this concept. The light-mode toggle retains the existing `stratik-rework-theme` storage key to preserve returning visitors' preferences. Contact and inquiry emails use `info@geodraft.hr`.
+The theme toggle uses `litologik-theme` and retains compatibility with earlier saved preferences. Contact emails use `info@litologik.hr`.
 
 The inquiry form prepares an email in the visitor's mail app. It does not claim to send mail through a backend.
 
 Assets:
-- GEOdraft GD monogram supplied by the client on September 25, 2026. The transparent master is `assets/geodraft-master.png`; the website uses 320px and 960px WebP derivatives, plus 64px and 180px PNG icons. The name is live text, not baked into an image. Dark mode uses a white CSS treatment of the same mark. See `assets/geodraft-brand.md` for asset provenance.
+- Litologik circular logo supplied by the client. The header uses `assets/litologik-brand.webp`, displaying only the circular symbol beside the existing live-text company name. The favicon uses `assets/litologik-symbol-64.png`.
 - Terrain adapted from the existing maptrace sketch, originally by Kjetil Golid: https://github.com/kgolid/p5ycho/tree/master/trace-perspective
 - Quarry photograph: Dion Beetson, Unsplash. Illustrative image, not a company project reference. https://unsplash.com/photos/oF7hh97lVqA (Unsplash License).
 - Icons: Lucide, ISC license, selected icon nodes from the installed package.
