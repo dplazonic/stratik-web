@@ -29,6 +29,7 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .site-header {position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
 .header-inner {min-height:var(--header-height);display:flex;align-items:center;gap:32px}
 .brand {display:inline-flex;align-items:center;gap:10px;flex:none;color:var(--ink)}
+.brand-symbol {display:block;width:36px;height:36px;flex:none;border-radius:50%;background:url('assets/litologik-brand.webp') 15.6% 48% / 432% auto no-repeat}
 .brand-name {font-size:20px;font-weight:700;line-height:1.15;white-space:nowrap}
 .desktop-nav {display:flex;gap:32px;align-items:center;margin-left:auto}
 .desktop-nav a {position:relative;padding:10px 0;color:var(--ink);font-size:14px;font-weight:500}
