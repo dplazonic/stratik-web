@@ -15,7 +15,7 @@ The theme toggle uses `litologik-theme` and retains compatibility with earlier s
 The inquiry form prepares an email in the visitor's mail app. It does not claim to send mail through a backend.
 
 Assets:
-- Litologik circular logo supplied by the client. The header uses `assets/litologik-brand.webp`, displaying only the circular symbol beside the existing live-text company name. The favicon uses `assets/litologik-symbol-64.png`.
+- Litologik circular logo supplied by the client. The header uses `assets/litologik-symbol-header.png`, a transparent 144px icon displayed at 36px beside the existing live-text company name. The icon has a transparent margin and smooth alpha edges, with no additional CSS clipping. The favicon uses `assets/litologik-symbol-64.png`.
 - Terrain adapted from the existing maptrace sketch, originally by Kjetil Golid: https://github.com/kgolid/p5ycho/tree/master/trace-perspective
 - Quarry photograph: Dion Beetson, Unsplash. Illustrative image, not a company project reference. https://unsplash.com/photos/oF7hh97lVqA (Unsplash License).
 - Icons: Lucide, ISC license, selected icon nodes from the installed package.
