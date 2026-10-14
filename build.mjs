@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 const source = new URL('./preview/', import.meta.url);
@@ -13,8 +13,13 @@ for (const name of ['styles.css', 'brand.css']) {
   html = html.replace(link, () => `<style data-source="${name}">\n${css}\n    </style>`);
 }
 
+// dist is generated output; rebuilding must not retain files from older brands.
+await rm(output, { recursive: true, force: true });
 await mkdir(new URL('assets/', output), { recursive: true });
 await copyFile(new URL('site.js', source), new URL('site.js', output));
+for (const name of ['robots.txt', 'sitemap.xml']) {
+  await copyFile(new URL(`./${name}`, import.meta.url), new URL(name, output));
+}
 
 // Only publish assets referenced by the page and its inlined styles, plus licenses.
 const assets = new Set([...html.matchAll(/assets\/[\w.-]+/g)].map(match => match[0]));

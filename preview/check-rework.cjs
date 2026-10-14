@@ -2,8 +2,8 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:3001/dist/';
-const out = path.join(process.env.TEMP, 'geodraft-office-review');
+const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:3001/';
+const out = path.join(require('node:os').tmpdir(), 'geodraft-office-review');
 const waitForCard = (page, index) => page.waitForFunction(index => {
   const slider = document.querySelector('.services-grid');
   const card = slider.querySelectorAll('.service:not([data-loop-copy])')[index];
@@ -22,12 +22,12 @@ const waitForCard = (page, index) => page.waitForFunction(index => {
       await page.goto(baseUrl, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('h1').count(), 1);
-      assert.equal(await page.locator('h1').innerText(), 'Litologik');
+      assert.equal(await page.locator('h1').innerText(), 'GEOdraft');
       assert.deepEqual(await page.locator('main section').evaluateAll(els => els.map(el => el.id)), ['hero','usluge','o-nama','kontakt']);
       assert.deepEqual(await page.locator('.service:not([data-loop-copy]) h3').allTextContents(), ['Rudarski projekti','Elaborati o rezervama','Geološka istraživanja','Stručna podrška']);
       assert.equal(await page.locator('dialog, .process-steps, [data-inquiry]').count(), 0);
-      assert.equal(await page.locator('.hero-contact').getAttribute('href'), 'mailto:info@litologik.hr');
-      assert.equal(await page.locator('.email-link').getAttribute('href'), 'mailto:info@litologik.hr');
+      assert.equal(await page.locator('.hero-contact').getAttribute('href'), 'mailto:info@geodraft.hr');
+      assert.equal(await page.locator('.email-link').getAttribute('href'), 'mailto:info@geodraft.hr');
       if (width < 768) await waitForCard(page, 0);
       const geometry = await page.evaluate(() => {
         const slider = document.querySelector('.services-grid');
