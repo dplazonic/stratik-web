@@ -6,6 +6,12 @@
   const mobileMedia = matchMedia('(max-width: 767px)');
   const motionMedia = matchMedia('(prefers-reduced-motion: reduce)');
 
+  function syncPageVisibility() {
+    root.classList.toggle('page-hidden', document.hidden);
+  }
+  document.addEventListener('visibilitychange', syncPageVisibility);
+  syncPageVisibility();
+
   function renderIcons(scope = document) {
     scope.querySelectorAll('[data-icon]').forEach(placeholder => {
       const nodes = window.STRATIK_ICONS?.[placeholder.dataset.icon];
@@ -59,7 +65,7 @@
   applyTheme(root.dataset.theme);
   themeButton.addEventListener('click', () => {
     const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('litologik-theme', theme); } catch {}
+    try { localStorage.setItem('geodraft-theme', theme); } catch {}
     applyTheme(theme);
   });
 

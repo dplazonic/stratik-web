@@ -29,8 +29,18 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
 .site-header {position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
 .header-inner {min-height:var(--header-height);display:flex;align-items:center;gap:32px}
 .brand {display:inline-flex;align-items:center;gap:10px;flex:none;color:var(--ink)}
-.brand-symbol {display:block;width:36px;height:36px;flex:none;object-fit:contain}
-.brand-name {font-size:20px;font-weight:700;line-height:1.15;white-space:nowrap}
+.brand-symbol {display:block;width:66px;height:31px;flex:none;object-fit:contain}
+:root[data-theme=dark] .brand-symbol {filter:brightness(0) invert(1)}
+@keyframes brand-pulse {
+  0%,100% {transform:scale(1)}
+  50% {transform:scale(1.06)}
+}
+@media(prefers-reduced-motion:no-preference) {
+  .site-header .brand-symbol {animation:brand-pulse 5s ease-in-out infinite}
+  .page-hidden .site-header .brand-symbol {animation-play-state:paused}
+}
+.brand-name {font-size:17px;font-weight:700;line-height:1.15;white-space:nowrap}
+.brand-name>span,.hero h1>span {font-weight:500}
 .desktop-nav {display:flex;gap:32px;align-items:center;margin-left:auto}
 .desktop-nav a {position:relative;padding:10px 0;color:var(--ink);font-size:14px;font-weight:500}
 .desktop-nav a:after {content:'';position:absolute;left:0;right:0;bottom:3px;height:1px;background:var(--accent-ink);transform:scaleX(0);transform-origin:left;transition:transform .2s}
@@ -113,7 +123,8 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
   h3 {font-size:21px}
   .section-space {padding-block:36px}
   .header-inner {gap:16px}
-  .brand-name {font-size:18px}
+  .brand-symbol {width:54px;height:25px}
+  .brand-name {font-size:15px}
   .desktop-nav {gap:0 16px;flex-wrap:wrap;min-width:0}
   .desktop-nav a {font-size:13px}
   .js .desktop-nav {display:none}

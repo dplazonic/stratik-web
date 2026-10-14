@@ -1,6 +1,6 @@
-# Litologik web
+# GEOdraft web
 
-Static website for Litologik d.o.o.
+Static website for GEOdraft d.o.o.
 
 ## Deploy on Vercel
 
