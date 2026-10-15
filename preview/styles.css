@@ -40,7 +40,8 @@ svg.icon {stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;st
   .page-hidden .site-header .brand-symbol {animation-play-state:paused}
 }
 .brand-name {font-size:17px;font-weight:700;line-height:1.15;white-space:nowrap}
-.brand-name>span,.hero h1>span {font-weight:500}
+.brand-name,.hero h1 {font-family:Arial,Helvetica,sans-serif}
+.brand-name>span,.hero h1>span {font-family:Montserrat,Arial,sans-serif;font-weight:500}
 .desktop-nav {display:flex;gap:32px;align-items:center;margin-left:auto}
 .desktop-nav a {position:relative;padding:10px 0;color:var(--ink);font-size:14px;font-weight:500}
 .desktop-nav a:after {content:'';position:absolute;left:0;right:0;bottom:3px;height:1px;background:var(--accent-ink);transform:scaleX(0);transform-origin:left;transition:transform .2s}
